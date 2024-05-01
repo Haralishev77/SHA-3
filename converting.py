@@ -41,11 +41,3 @@ def state_array_to_string(state_A: np.array) -> str:
         s += planes[y]
 
     return s
-
-
-if __name__ == '__main__':
-    s = '10101010101001010111100111010101010100101011110011'
-
-    state_A = string_to_state_array(s)
-    print(state_A)
-    print(state_array_to_string(state_A))
