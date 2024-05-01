@@ -21,24 +21,24 @@ def state_array_to_string(state_A: np.array) -> str:
     if w not in (1, 2, 4, 8, 16, 32, 64):
         raise Exception(f"You passed the wrong state array, its length cannot be equal to {w}")
     
-    lanes = np.array(np.zeros((5, 5)), dtype=int)
+    lanes = list([0]*5 for _ in range(0, 5))
     for x in range(0, 5):
         for y in range(0, 5):
             lane = ''
             for z in range(0, w):
                 lane += str(state_A[x, y, z])
-            lanes[x, y] = lane
+            lanes[x][y] = lane
 
-    planes = np.array(np.zeros((5)), dtype=int)
+    planes = [0]*5
     for y in range(0, 5):
         plane = ''
         for x in range(0, 5):
-            plane += str(lanes[x, y])
+            plane += lanes[x][y]
         planes[y] = plane
 
     s = ''
     for y in range(0, 5):
-        s += str(planes[y])
+        s += planes[y]
 
     return s
 
