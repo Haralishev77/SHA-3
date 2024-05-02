@@ -12,6 +12,6 @@ test.py
 
 ## User input
 The *user* folder contains *input.md* and *outout.md*, which contain the input message and the result of the hash function that the user called. To start working with the user input, simply execute:
-``
+```
 main.py
-``
+```
